@@ -1,0 +1,19 @@
+const extractCurrencyValue = (str) => {
+    let sim;
+    let max = str.length;
+    for(var i = 0; i < str.length ; i++) {
+      if(!isNaN(parseInt(str.slice(i)))) {
+        sim = i;
+        break;
+      }
+    }
+    for(var i = sim; i < str.length; i++) {
+    	if(isNaN(parseInt(str.slice(i)))) {
+      	max = i;
+        break;
+      }
+    }
+    let sk;
+    sk = str.slice(sim, max);
+    return sk;
+  }
